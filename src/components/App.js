@@ -2,7 +2,7 @@ import "../stylesheets/App.css";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import React, { useEffect, useState } from "react";
-// import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 // import UserDetail from './UserDetail';
 import getDataFromApi from "../services/getDataFromApi";
@@ -30,8 +30,10 @@ const App = () => {
       <main className="main-container">
         <h1 className="main-title">Tus personajes favoritos</h1>
         <Filters handleInput={handleInput} />
-
         <CharacterList characters={filterCharacter} />
+        <Switch>
+          <Route path="/character/:id" />
+        </Switch>
       </main>
     </div>
   );
