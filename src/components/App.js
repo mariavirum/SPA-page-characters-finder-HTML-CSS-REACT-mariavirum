@@ -2,7 +2,7 @@ import "../stylesheets/App.css";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import React, { useEffect, useState } from "react";
-// import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch } from "react-router-dom";
 
 // import UserDetail from './UserDetail';
 import getDataFromApi from "../services/getDataFromApi";
@@ -24,9 +24,8 @@ const App = () => {
           <label for="name">Busca aquí:</label>
           <input id="name" type="text" name="name" />
         </form>
-        <ul>
-          <CharacterList />
-        </ul>
+
+        <CharacterList characters={characters} />
       </main>
     </div>
   );
