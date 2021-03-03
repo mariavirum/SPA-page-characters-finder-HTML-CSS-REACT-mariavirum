@@ -4,11 +4,11 @@ import Filters from "./Filters";
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
-// import UserDetail from './UserDetail';
+import CharacterDetail from "./CharacterDetail";
 import getDataFromApi from "../services/getDataFromApi";
 
-console.log(getDataFromApi());
 const App = () => {
+  //LLamada a API
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState("");
 
@@ -24,6 +24,14 @@ const App = () => {
     return character.name.toUpperCase().includes(name.toUpperCase());
   });
 
+  const renderDetail = (props) => {
+    const idUrl = props.match.params.id;
+    const selectCharacter = characters.find((character) => {
+      return character.id === idUrl;
+    });
+    return <CharacterDetail character={selectCharacter} />;
+  };
+
   return (
     <div className="page-container">
       <header className="header-container"></header>
@@ -32,7 +40,8 @@ const App = () => {
         <Filters handleInput={handleInput} />
         <CharacterList characters={filterCharacter} />
         <Switch>
-          <Route path="/character/:id" />
+          <Route exact path="/" />
+          <Route path="/character/:id" render={renderDetail} />
         </Switch>
       </main>
     </div>

@@ -1,6 +1,7 @@
 function Filters(props) {
   const handleEvent = (ev) => {
     props.handleInput(ev.target.value);
+    ev.preventDefault();
   };
 
   return (
