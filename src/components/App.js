@@ -6,25 +6,32 @@ import React, { useEffect, useState } from "react";
 
 // import UserDetail from './UserDetail';
 import getDataFromApi from "../services/getDataFromApi";
-import Filters from "./Filters";
 
 console.log(getDataFromApi());
 const App = () => {
   const [characters, setCharacters] = useState([]);
-  const [inputName, setInputName] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     getDataFromApi().then((data) => setCharacters(data));
   }, []);
+
+  const handleInput = (inputValue) => {
+    setName(inputValue);
+  };
+
+  const filterCharacter = characters.filter((character) => {
+    return character.name.toUpperCase().includes(name.toUpperCase());
+  });
 
   return (
     <div className="page-container">
       <header className="header-container"></header>
       <main className="main-container">
         <h1 className="main-title">Tus personajes favoritos</h1>
-        <Filters />
+        <Filters handleInput={handleInput} />
 
-        <CharacterList characters={characters} />
+        <CharacterList characters={filterCharacter} />
       </main>
     </div>
   );
