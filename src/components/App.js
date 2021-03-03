@@ -6,10 +6,12 @@ import React, { useEffect, useState } from "react";
 
 // import UserDetail from './UserDetail';
 import getDataFromApi from "../services/getDataFromApi";
+import Filters from "./Filters";
 
 console.log(getDataFromApi());
 const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [inputName, setInputName] = useState("");
 
   useEffect(() => {
     getDataFromApi().then((data) => setCharacters(data));
@@ -20,10 +22,7 @@ const App = () => {
       <header className="header-container"></header>
       <main className="main-container">
         <h1 className="main-title">Tus personajes favoritos</h1>
-        <form className="form-container">
-          <label for="name">Busca aquí:</label>
-          <input id="name" type="text" name="name" />
-        </form>
+        <Filters />
 
         <CharacterList characters={characters} />
       </main>
