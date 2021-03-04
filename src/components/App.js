@@ -1,11 +1,11 @@
 import "../stylesheets/App.css";
-import CharacterList from "./CharacterList";
-import Filters from "./Filters";
+import getDataFromApi from "../services/getDataFromApi";
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-
+import CharacterList from "./CharacterList";
+import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
-import getDataFromApi from "../services/getDataFromApi";
+import Header from "./Header";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -54,14 +54,7 @@ const App = () => {
   };
   return (
     <div className="page-container">
-      <header className="header-container">
-        <img
-          className="header-logo"
-          src="../images/gift5.gif"
-          alt="Logo Rick y Morty"
-          title="Logo Rick y Morty"
-        />
-      </header>
+      <Header />
       <main className="main-container">
         <h1 className="main-title">Tus personajes favoritos</h1>
 
