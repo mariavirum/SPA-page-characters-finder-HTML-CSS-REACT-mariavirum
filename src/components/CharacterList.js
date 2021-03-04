@@ -1,18 +1,21 @@
 import CharacterCard from "./CharacterCard";
+import { Link } from "react-router-dom";
 
 const CharacterList = (props) => {
   //no cumple el includes asi que no pasa nada por props.
   if (props.characters.length === 0) {
     return (
       <>
-        <p className="notFound-text">
-          No hemos encontrado ese personaje, inténtalo con otro.
-        </p>
-        <div>
-          {/* <Link to="/home">
-        <button className="notFound-buton">Volver</button>
-      </Link> */}
-        </div>
+        <section className="notFound-container">
+          <p className="notFound-text">
+            No hemos encontrado ese personaje, inténtalo con otro.
+          </p>
+          <div>
+            <Link to="/">
+              <button className="notFound-buton">Volver</button>
+            </Link>
+          </div>
+        </section>
       </>
     );
   } else {
@@ -26,8 +29,8 @@ const CharacterList = (props) => {
     });
 
     return (
-      <section>
-        <ul>{characterListElements}</ul>
+      <section className="characterList-container">
+        <ul className="characterListElements">{characterListElements}</ul>
       </section>
     );
   }

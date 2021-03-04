@@ -36,7 +36,6 @@ const App = () => {
   });
 
   const renderDetail = (props) => {
-    debugger;
     const idUrl = parseInt(props.match.params.id);
     const selectCharacter = characters.find((character) => {
       return character.id === idUrl;
