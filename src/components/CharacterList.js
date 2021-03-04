@@ -22,7 +22,7 @@ const CharacterList = (props) => {
     const characterListElements = props.characters.map((character) => {
       // console.log(character);
       return (
-        <li key={character.id}>
+        <li className="" key={character.id}>
           <CharacterCard character={character} />
         </li>
       );

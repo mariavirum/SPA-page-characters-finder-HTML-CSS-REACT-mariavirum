@@ -54,7 +54,14 @@ const App = () => {
   };
   return (
     <div className="page-container">
-      <header className="header-container"></header>
+      <header className="header-container">
+        <img
+          className="header-logo"
+          src="../images/gift5.gif"
+          alt="Logo Rick y Morty"
+          title="Logo Rick y Morty"
+        />
+      </header>
       <main className="main-container">
         <h1 className="main-title">Tus personajes favoritos</h1>
 
