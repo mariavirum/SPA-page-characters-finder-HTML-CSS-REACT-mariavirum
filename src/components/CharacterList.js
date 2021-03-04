@@ -1,19 +1,35 @@
 import CharacterCard from "./CharacterCard";
 
 const CharacterList = (props) => {
-  const characterListElements = props.characters.map((character) => {
-    // console.log(character);
+  //no cumple el includes asi que no pasa nada por props.
+  if (props.characters.length === 0) {
     return (
-      <li key={character.id}>
-        <CharacterCard character={character} />
-      </li>
+      <>
+        <p className="notFound-text">
+          No hemos encontrado ese personaje, inténtalo con otro.
+        </p>
+        <div>
+          {/* <Link to="/home">
+        <button className="notFound-buton">Volver</button>
+      </Link> */}
+        </div>
+      </>
     );
-  });
+  } else {
+    const characterListElements = props.characters.map((character) => {
+      // console.log(character);
+      return (
+        <li key={character.id}>
+          <CharacterCard character={character} />
+        </li>
+      );
+    });
 
-  return (
-    <section>
-      <ul>{characterListElements}</ul>
-    </section>
-  );
+    return (
+      <section>
+        <ul>{characterListElements}</ul>
+      </section>
+    );
+  }
 };
 export default CharacterList;
