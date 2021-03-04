@@ -10,7 +10,7 @@ const getDataFromApi = () => {
           image: character.image,
           planet: character.origin.name,
           status: character.status,
-          episodes: character.episode,
+          episodes: character.episode.length,
         };
       });
     });

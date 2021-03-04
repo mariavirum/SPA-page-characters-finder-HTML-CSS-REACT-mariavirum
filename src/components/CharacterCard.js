@@ -4,7 +4,7 @@ const CharacterCard = (props) => {
   return (
     <Link to={`/character/${props.character.id}`}>
       <img
-        clasName="character-img"
+        className="character-img"
         src={props.character.image}
         alt="imagen del personaje"
       />

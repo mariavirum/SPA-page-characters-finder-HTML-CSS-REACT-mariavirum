@@ -7,8 +7,14 @@ function Filters(props) {
   return (
     <section>
       <form className="form-container">
-        <label for="name">Busca aquí:</label>
-        <input id="name" type="text" name="name" onChange={handleEvent} />
+        <label htmlFor="name">Busca aquí:</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          value={props.name}
+          onChange={handleEvent}
+        />
       </form>
     </section>
   );
