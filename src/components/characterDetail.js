@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const CharacterDetail = (props) => {
-  // console.log(props.character);
   return (
     <>
       <section className="detail-container">
