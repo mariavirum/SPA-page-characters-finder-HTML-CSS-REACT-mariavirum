@@ -1,4 +1,4 @@
-import "../stylesheets/App.css";
+import "../stylesheets/App.scss";
 import getDataFromApi from "../services/getDataFromApi";
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
