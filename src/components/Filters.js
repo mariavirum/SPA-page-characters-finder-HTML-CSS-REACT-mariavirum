@@ -1,3 +1,4 @@
+import gif from "../images/gif11.gif";
 function Filters(props) {
   const handleEvent = (ev) => {
     props.handleInput(ev.target.value);
@@ -9,6 +10,7 @@ function Filters(props) {
       <form className="form-container">
         <label className="formLabel" htmlFor="name">
           Busca aquí:
+          <img className="formGif" src={gif} alt="Rick y Morty" />
         </label>
         <input
           className="formInput"
