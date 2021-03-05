@@ -49,11 +49,6 @@
   border: black 3px solid;
 }
 
-.main-title {
-  text-align: center;
-  text-transform: uppercase;
-}
-
 /* //FILTER */
 .form-container {
   display: flex;
@@ -63,7 +58,7 @@
 .formLabel {
   text-align: center;
   padding: 20px;
-  font-size: 30px;
+  font-size: 40px;
   -webkit-text-stroke: 1px black;
   color: rgb(255, 164, 32);
   text-transform: uppercase;
@@ -71,7 +66,8 @@
 .formGif {
   width: 100px;
   position: absolute;
-  transform: translateY(18px);
+  transform: translateY(20px);
+  transform: translateX(17px);
 }
 .formInput {
   padding: 5px 80px;

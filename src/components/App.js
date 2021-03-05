@@ -6,6 +6,7 @@ import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -64,6 +65,7 @@ const App = () => {
         <CharacterList characters={filterCharacter} /> */}
         </Switch>
       </main>
+      <Footer />
     </div>
   );
 };
