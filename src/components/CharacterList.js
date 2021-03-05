@@ -1,5 +1,6 @@
 import CharacterCard from "./CharacterCard";
 import { Link } from "react-router-dom";
+import gifNotFound from "../images/gif2.gif";
 
 const CharacterList = (props) => {
   //no cumple el includes asi que no pasa nada por props.
@@ -10,11 +11,17 @@ const CharacterList = (props) => {
           <p className="notFound-text">
             No hemos encontrado ese personaje, inténtalo con otro.
           </p>
-          <div>
+
+          <img
+            className="notFoundImage"
+            src={gifNotFound}
+            alt="Lo siento, busca otro personaje"
+          />
+          {/* <div>
             <Link to="/">
               <button className="notFound-buton">Volver</button>
             </Link>
-          </div>
+          </div> */}
         </section>
       </>
     );

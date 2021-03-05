@@ -7,8 +7,11 @@ function Filters(props) {
   return (
     <section>
       <form className="form-container">
-        <label htmlFor="name">Busca aquí:</label>
+        <label className="formLabel" htmlFor="name">
+          Busca aquí:
+        </label>
         <input
+          className="formInput"
           id="name"
           type="text"
           name="name"
