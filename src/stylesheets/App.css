@@ -5,6 +5,7 @@
 .page-container {
   width: 100%;
   height: 100vh;
+  border-bottom: black 3px solid;
 }
 .header-container {
   text-align: right;
@@ -18,7 +19,7 @@
 }
 @media all and (min-width: 768px) {
   .header-container {
-    height: 280px;
+    height: 200px;
   }
 }
 
@@ -28,8 +29,9 @@
 }
 @media all and (min-width: 768px) {
   .header-logo {
-    padding-top: 50px;
-    width: 300px;
+    /* padding-top: 10px; */
+    width: 400px;
+    height: 150px;
     margin-right: 100px;
   }
 }
@@ -41,6 +43,10 @@
   background-image: url(../images/back10.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border-top: 0px;
+  padding-top: 15px;
+
+  border: black 3px solid;
 }
 
 .main-title {
@@ -105,16 +111,14 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: rgb(146, 78, 125) 3px solid;
-  border-radius: 10px;
+  border: rgb(146, 78, 125) 5px solid;
+  border-radius: 24px;
   background-color: rgba(255, 140, 50, 0.9);
-
-  /* background-color: #f1c40f; */
-
-  /* transition: transform 1s ease;
-  :hover {
-    transform: scale(1.1);
-  } */
+}
+.character-img {
+  border-radius: 16px;
+  /* object-fit: cover;
+  object-position: center center; */
 }
 .character-name {
   color: black;
@@ -130,8 +134,8 @@
 
 /* //CHARACTER DETAIL CARD */
 .detail-container {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background-color: rgba(93, 193, 185, 0.8);
   color: black;
   display: flex;

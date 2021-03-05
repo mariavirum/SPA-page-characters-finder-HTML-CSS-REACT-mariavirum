@@ -1,4 +1,5 @@
 import gif from "../images/gif11.gif";
+
 function Filters(props) {
   const handleEvent = (ev) => {
     props.handleInput(ev.target.value);
@@ -24,4 +25,5 @@ function Filters(props) {
     </section>
   );
 }
+
 export default Filters;
