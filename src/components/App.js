@@ -54,7 +54,7 @@ const App = () => {
     );
   };
   return (
-    <div className="page-container">
+    <>
       <Header />
       <main className="main-container">
         <Switch>
@@ -66,7 +66,7 @@ const App = () => {
         </Switch>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 export default App;

@@ -1,3 +1,7 @@
+//VARIABLES
+$font-text: "Covered by your grace", sans-serif;
+
+//@MIXINS
 @mixin tablet() {
   @media all and (min-width: 768px) {
     @content;
