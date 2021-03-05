@@ -1,3 +1,5 @@
+@import "./Variables.scss";
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -5,10 +7,12 @@
 .page-container {
   width: 100%;
   height: 100vh;
+  background-color: rgb(146, 78, 125);
   border-bottom: black 3px solid;
+  margin: 0px;
 }
 .header-container {
-  text-align: right;
+  text-align: end;
   width: 100%;
   height: 150px;
   background-image: url(../images/cabecera.png);
@@ -16,27 +20,30 @@
   background-size: cover;
   background-position: center;
   border: black 3px solid;
-}
-@media all and (min-width: 768px) {
-  .header-container {
+  @include tablet() {
     height: 200px;
   }
 }
 
 .header-logo {
   width: 180px;
-  margin-right: 20px;
-}
-@media all and (min-width: 768px) {
-  .header-logo {
-    /* padding-top: 10px; */
+  padding-right: 20px;
+  padding-top: 35px;
+  @include tablet() {
     width: 400px;
     height: 150px;
-    margin-right: 100px;
+    padding-right: 50px;
+  }
+  @include desktop() {
+    width: 700px;
+    height: 160px;
+    padding-right: 200px;
+    padding-top: 8px;
   }
 }
 
 .main-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,6 +54,8 @@
   padding-top: 15px;
   padding-bottom: 50px;
   border: black 3px solid;
+  @include tablet() {
+  }
 }
 
 /* //FILTER */
@@ -75,6 +84,9 @@
 .formInput {
   padding: 5px 80px;
   border-radius: 15px;
+  &:focus {
+    outline: none;
+  }
 }
 
 /* //CHARACTER LIST */
@@ -86,20 +98,11 @@
   list-style: none;
   padding-top: 30px;
   padding-left: 0;
-
-  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
-}
-@media all and (min-width: 768px) {
-  .characterListElements {
+  @include tablet() {
     grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
   }
-}
-
-@media all and (min-width: 1200px) {
-  .characterListElements {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+  @include desktop() {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -113,6 +116,19 @@
   border: rgb(146, 78, 125) 5px solid;
   border-radius: 24px;
   background-color: rgba(255, 140, 50, 0.9);
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: scale(1.1);
+    background-color: rgba(92, 225, 230, 0.4);
+  }
+  @include tablet() {
+    margin: 20px;
+  }
+  @include desktop() {
+    margin: 40px;
+  }
 }
 .character-img {
   border-radius: 16px;
@@ -135,9 +151,10 @@
 
 /* //CHARACTER DETAIL CARD */
 .detail-container {
-  width: 500px;
-  height: 100vh;
+  width: 300px;
+  height: 300px;
   background-color: rgba(93, 193, 185, 0.8);
+  // background-color: rgba(92, 225, 230, 0.4);
   color: black;
   display: flex;
   flex-direction: column;
@@ -146,28 +163,55 @@
   border-radius: 50%;
   border: black 5px solid;
   font-family: "Covered by your grace", sans-serif;
+  margin-bottom: 20px;
+  @include tablet() {
+    width: 590px;
+    height: 590px;
+  }
+  @include desktop() {
+  }
 }
 
 .detail-img {
-  border-radius: 50%;
+  border-radius: 60%;
+  width: 130px;
+  @include tablet() {
+    width: 250px;
+  }
 }
-
+.detail-name {
+  color: rgb(187, 99, 159);
+  -webkit-text-stroke: 0.2px black;
+  font-size: 18px;
+  @include tablet() {
+    font-size: 30px;
+  }
+}
 .detailContainer-text {
-  padding: 15px;
+  font-size: 12px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @include tablet() {
+    font-size: 20px;
+    padding: 15px;
+  }
 }
 
 .detail-buton {
-  padding: 15px 40px;
+  font-family: "Covered by your grace", sans-serif;
+  padding: 3px 20px;
   border-radius: 18px;
-  border: black 2px solid;
+  border: rgb(187, 99, 159) 2px solid;
   text-transform: uppercase;
-  text-decoration: turquoise;
   &:focus {
     outline: none;
+  }
+  @include tablet() {
+    padding: 15px 40px;
+    font-size: 20px;
   }
 }
 
@@ -191,7 +235,17 @@
 
 /* //FOOTER */
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 70px;
-  background-color: rgb(146, 78, 125);
+  height: 60px;
+  background-color: rgba(146, 78, 125, 0.8);
+  text-align: center;
+}
+
+.footer-text {
+  font-family: "Covered by your grace", sans-serif;
+  font-size: 20px;
+  padding: 15px;
 }
