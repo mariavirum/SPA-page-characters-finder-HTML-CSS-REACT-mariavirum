@@ -1,5 +1,4 @@
 import CharacterCard from "./CharacterCard";
-import { Link } from "react-router-dom";
 import gifNotFound from "../images/gif2.gif";
 
 const CharacterList = (props) => {
@@ -17,11 +16,6 @@ const CharacterList = (props) => {
             src={gifNotFound}
             alt="Lo siento, busca otro personaje"
           />
-          {/* <div>
-            <Link to="/">
-              <button className="notFound-buton">Volver</button>
-            </Link>
-          </div> */}
         </section>
       </>
     );

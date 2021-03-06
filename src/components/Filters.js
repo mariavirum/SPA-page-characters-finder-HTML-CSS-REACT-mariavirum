@@ -1,29 +1,21 @@
-import gif from "../images/gif11.gif";
+import FilterByName from "./FilterByName";
+import FilterBySpecie from "./FilterBySpecie";
 
-function Filters(props) {
-  const handleEvent = (ev) => {
-    props.handleInput(ev.target.value);
+const Filters = (props) => {
+  const handleDefault = (ev) => {
     ev.preventDefault();
   };
-
   return (
-    <section>
-      <form className="form-container">
-        <label className="formLabel" htmlFor="name">
-          Busca aquí:
-          <img className="formGif" src={gif} alt="Rick y Morty" />
-        </label>
-        <input
-          className="formInput"
-          id="name"
-          type="text"
-          name="name"
-          value={props.name}
-          onChange={handleEvent}
+    <section className="form-section">
+      <form className="form-container" onSubmit={handleDefault}>
+        <FilterByName handleInput={props.handleInput} name={props.name} />
+        <FilterBySpecie
+          handleInput={props.handleInput}
+          species={props.species}
         />
       </form>
     </section>
   );
-}
+};
 
 export default Filters;

@@ -7,18 +7,24 @@ import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import Header from "./Header";
 import Footer from "./Footer";
+// import userEvent from "@testing-library/user-event";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState("");
+  const [species, setSpecies] = useState("all");
 
   //LLamada a API
   useEffect(() => {
     getDataFromApi().then((data) => setCharacters(data));
   }, []);
 
-  const handleInput = (inputValue) => {
-    setName(inputValue);
+  const handleInput = (inputChange) => {
+    if (inputChange.key === "name") {
+      setName(inputChange.value);
+    } else if (inputChange.key === "species") {
+      setSpecies(inputChange.value);
+    }
   };
 
   const orderName = () => {
@@ -31,10 +37,19 @@ const App = () => {
     });
   };
 
-  const filterCharacter = characters.filter((character) => {
-    orderName();
-    return character.name.toUpperCase().includes(name.toUpperCase());
-  });
+  const filterCharacter = characters
+    .filter((character) => {
+      orderName();
+      return character.name.toUpperCase().includes(name.toUpperCase());
+    })
+    .filter((character) => {
+      if (species === "all") {
+        return true;
+      } else {
+        return character.species === species;
+      }
+      // return species === "all" ? true : character.species === species;
+    });
 
   const renderDetail = (props) => {
     const idUrl = parseInt(props.match.params.id);
@@ -45,10 +60,10 @@ const App = () => {
   };
 
   //Para que se ejecute cuando estemos en ruta Home #/
-  const renderHome = () => {
+  const renderHome = (props) => {
     return (
       <>
-        <Filters handleInput={handleInput} name={name} />
+        <Filters handleInput={handleInput} name={name} species={species} />
         <CharacterList characters={filterCharacter} />
       </>
     );
@@ -60,6 +75,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" render={renderHome} />
           <Route path="/character/:id" render={renderDetail} />
+
           {/* DETAIL Se me pintaba debajo de la lista */}
           {/* <Filters handleInput={handleInput} />
         <CharacterList characters={filterCharacter} /> */}

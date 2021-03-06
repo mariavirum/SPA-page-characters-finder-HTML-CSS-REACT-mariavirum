@@ -50,27 +50,69 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-top: 0px;
-  padding-top: 15px;
   padding-bottom: 50px;
   border: black 3px solid;
 }
 
-/* //FILTER */
+/* //FILTER FORM*/
+.form-section {
+  width: 100%;
+  padding: 20px;
+  @include tablet() {
+    padding-top: 40px;
+  }
+}
 .form-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  @include tablet() {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
-.formLabel {
+.formName-container {
+  @include tablet() {
+    padding-right: 30px;
+  }
+  @include desktop() {
+    padding-right: 150px;
+  }
+}
+.formSpecie-container {
+  padding-top: 5px;
+  @include tablet() {
+    padding-top: 0px;
+  }
+}
+
+.formLabelName {
   text-align: center;
   font-family: $font-text;
-  padding: 20px;
-  font-size: 35px;
+  font-size: 25px;
+  padding-right: 10px;
   -webkit-text-stroke: 1px black;
   color: rgb(255, 164, 32);
   text-transform: uppercase;
   @include tablet() {
-    font-size: 60px;
+    font-size: 40px;
+    padding-right: 20px;
+  }
+}
+.formLabelSpecie {
+  font-family: $font-text;
+  color: rgb(255, 164, 32);
+  padding-right: 10px;
+  @include tablet() {
+    padding-right: 10px;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    color: rgb(255, 164, 32);
+  }
+  @include desktop() {
+    font-size: 40px;
   }
 }
 .formGif {
@@ -84,14 +126,34 @@
     width: 200px;
   }
 }
-.formInput {
-  padding: 5px 40px;
+.formNameInput {
+  width: 150px;
+  height: 30px;
+  padding-left: 10px;
   border-radius: 15px;
   &:focus {
     outline: none;
   }
   @include tablet() {
-    padding: 5px 80px;
+    width: 190px;
+  }
+  @include desktop() {
+    font-size: 20px;
+    width: 300px;
+    height: 40px;
+  }
+}
+.formSpecieInput {
+  border-radius: 15px;
+  &:focus {
+    outline: none;
+  }
+  @include tablet() {
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+  }
+  @include desktop() {
   }
 }
 
@@ -102,10 +164,11 @@
   gap: 15px;
   grid-template-columns: 1fr;
   list-style: none;
-  padding-top: 30px;
+  // padding-top: 30px;
   padding-left: 0;
   @include tablet() {
     grid-template-columns: 1fr 1fr;
+    padding-top: 0px;
   }
   @include desktop() {
     grid-template-columns: 1fr 1fr 1fr;
@@ -119,10 +182,9 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: rgb(146, 78, 125) 5px solid;
+  border: rgb(146, 78, 125) 1px solid;
   border-radius: 24px;
   background-color: rgba(255, 140, 50, 0.9);
-  padding: 10px;
   margin: 10px;
   transition: all 0.2s ease;
   &:hover {
@@ -130,29 +192,43 @@
     background-color: rgba(92, 225, 230, 0.4);
   }
   @include tablet() {
+    border: rgb(146, 78, 125) 5px solid;
     margin: 20px;
+    padding: 10px;
   }
   @include desktop() {
     margin: 40px;
   }
 }
+.img-container {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+}
 .character-img {
   border-radius: 16px;
-  /* object-fit: cover;
-  object-position: center center; */
 }
 .character-name {
   color: black;
-  padding: 10px;
+  padding: 5px;
   font-family: $font-text;
-  font-size: 28px;
+  font-size: 20px;
+  @include tablet() {
+    font-size: 28px;
+    padding: 10px;
+  }
 }
 
 .character-specie {
   color: rgb(146, 78, 125);
   -webkit-text-stroke: 1px black;
   text-transform: uppercase;
-  padding: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  @include tablet() {
+    font-size: 28px;
+    padding: 10px;
+  }
 }
 
 /* //CHARACTER DETAIL CARD */
@@ -193,7 +269,7 @@
 }
 .detailContainer-text {
   font-size: 12px;
-  padding: 5px;
+  // padding: 2px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -206,15 +282,19 @@
 
 .detail-buton {
   font-family: $font-text;
-  padding: 3px 20px;
+  font-size: 10px;
+  width: 60px;
+  height: 18px;
   border-radius: 18px;
   border: rgb(187, 99, 159) 2px solid;
   text-transform: uppercase;
+  cursor: pointer;
   &:focus {
     outline: none;
   }
   @include tablet() {
-    padding: 15px 40px;
+    width: 100px;
+    height: 30px;
     font-size: 20px;
   }
 }

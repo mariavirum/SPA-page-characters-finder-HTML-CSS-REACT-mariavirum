@@ -5,7 +5,7 @@ const CharacterCard = (props) => {
   return (
     <div>
       <Link className="card-container" to={`/character/${props.character.id}`}>
-        <div style={{ width: "100%", height: "300px" }}>
+        <div className="img-container">
           <img
             className="character-img"
             src={props.character.image}
