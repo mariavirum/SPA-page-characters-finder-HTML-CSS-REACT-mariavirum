@@ -120,12 +120,10 @@
   }
 }
 .formGif {
-  width: 100px;
+  width: 70px;
   font-family: $font-text;
-  font-size: 20px;
   position: fixed;
-  // transform: translateY(30px);
-  transform: translate(-140px, 10px);
+  transform: translate(-120px, 20px);
   @include tablet() {
     width: 150px;
     transform: translate(290px, -30px);
