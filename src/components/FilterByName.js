@@ -1,4 +1,4 @@
-// import gif from "../images/gif11.gif";
+import gif from "../images/gif11.gif";
 import PropTypes from "prop-types";
 
 const FilterByName = (props) => {
@@ -13,7 +13,7 @@ const FilterByName = (props) => {
     <div className="formName-container">
       <label className="formLabelName" htmlFor="name">
         Busca aquí:
-        {/* <img className="formGif" src={gif} alt="Rick y Morty" /> */}
+        <img className="formGif" src={gif} alt="Rick y Morty" />
       </label>
       <input
         className="formNameInput"
