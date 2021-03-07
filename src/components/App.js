@@ -75,10 +75,6 @@ const App = () => {
         <Switch>
           <Route exact path="/" render={renderHome} />
           <Route path="/character/:id" render={renderDetail} />
-
-          {/* DETAIL Se me pintaba debajo de la lista */}
-          {/* <Filters handleInput={handleInput} />
-        <CharacterList characters={filterCharacter} /> */}
         </Switch>
       </main>
       <Footer />

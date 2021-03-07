@@ -21,7 +21,6 @@ const CharacterList = (props) => {
     );
   } else {
     const characterListElements = props.characters.map((character) => {
-      // console.log(character);
       return (
         <li className="" key={character.id}>
           <CharacterCard character={character} />
